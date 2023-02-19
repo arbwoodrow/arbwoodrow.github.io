@@ -78,7 +78,37 @@
                             </p>
                             <p>
                                 Before my involvement, Team17 had only used it in a very limited capacity on a single game project. 
-                                Documentation was limited, the application wasn't kept up to date with new updates, and it was running insecurely and without any authentication.
+                                Documentation was limited, the application wasn't kept up to date with new updates, and it was running insecurely and without any authentication. 
+                            </p>
+                            <p>
+                                On the plus side, it had been deployed with most of a CI/CD pipeline - code in Perforce, Docker image compiled by TeamCity, container deployed to the host server using Ansible. 
+                                Neither the build nor the deployment had been allowed the time and attention they needed, so there was a lot of room for improvement. 
+                                Thankfully it had been set up with dedicated test and live images and servers, which made it very easy to start tinkering without disrupting anything in use.
+                            </p>
+                            <p>
+                                So, my roadmap looked something like this:
+                                <ol>
+                                    <li>Review existing setup</li>
+                                    <li>Download latest Robomerge code</li>
+                                    <li>Test with the existing pipeline</li>
+                                    <li>Beg <a href="https://twitter.com/RegnerBA"></a>@RegnerBA</a> for advice</li>
+                                    <li>Move environment variables from build to deployment to increase flexibility and rapid testing</li>
+                                    <li>Configure Docker with permanent data and secrets vault directories</li>
+                                    <li>Get it running on HTTPS with our trusted SSL certs</li>
+                                    <li>Configure and test LDAP authentication</li>
+                                    <li>Set up Streams in Perforce for the Robomerge code to facilitate contributions from developers</li>
+                                    <li>Set up a Swarm project so that I have oversight of said contributions</li>
+                                    <li>Rewrite the Ansible deployment into our more mature Puppet environment</li>
+                                    <li>Start testing tool usage and configuration</li>
+                                    <li>Write documentation on all the above that can be easily found and parsed</li>
+                                    <li>Get feedback from service users/owners</li>
+                                    <li>Set up long term plans for use and development</li>
+                                </ol>
+                            </p>
+                            <p>
+                                By the time I set up the Swarm project, I was going "...hang on, I'm actually doing a full DevOps pipeline for the first time". 
+                                Before this project, I'd worked on source, build, and deployment, but never more than two bits at once. 
+                                Now I was starting with application source, and setting up a fully automated and collaborative pipeline to allow changes to be safely tested and deployed.
                             </p>
                             <p><a class="more-link" href="/index.html" target="_self"><i class="fas fa-external-link-alt"></i>Return Home</a></p>
                         </div><!--//content-->
